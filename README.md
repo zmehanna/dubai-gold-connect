@@ -1,26 +1,25 @@
-# Dubai Gold Connect — Demo MVP
+# Dubai Gold Connect — Premium B2B Concept MVP V0.2
 
-A private-concept B2B gold sourcing demonstration. **All supplier profiles are fictional.** No gold is sold, no payment is taken, no live pricing is displayed, and no real suppliers are contacted.
+A responsive **private B2B gold sourcing demonstration** designed for partner discussions.
 
-## Architecture
+## Live architecture
+- **Website:** GitHub Pages, static HTML/CSS/JavaScript.
+- **Source:** GitHub `zmehanna/dubai-gold-connect`.
+- **Read-only API:** Cloudflare Worker `dubai-gold-connect-api` (health and categories).
+- **Stripe:** not integrated.
+- **RFQs:** browser localStorage only, **not sent to any external service**.
 
-- Frontend: GitHub Pages, static `index.html`.
-- Backend: Cloudflare Worker (separate read-only demo API under `api/`).
-- Source: GitHub repository `zmehanna/dubai-gold-connect`.
-- Stripe: disabled and not connected.
-- Demo RFQs: browser localStorage only. **Never enter real confidential business or personal data.**
+## Demo journey
+- Editorial premium landing page (dark emerald, understated gold)
+- Responsive navigation and mobile menu
+- Supplier catalogue with fictional sample suppliers and category filtering
+- Supplier-to-RFQ preselection
+- RFQ form with input validation
+- Local RFQ dashboard with draft status
+- Worker health status in the announcement strip
 
-## Demo scope
+## Validation
+`node --check app.js`; optional browser smoke test with `node smoke-test.cjs` (requires playwright and Microsoft Edge installed).
 
-- Landing page, sample supplier directory, supplier category filter.
-- RFQ demo form, validation, local status dashboard.
-- Responsive UI. English first.
-- Backend health and category endpoints, no account database and no write endpoints.
-
-## Production blockers
-
-Before real supplier onboarding or external commercial use: legal licensing assessment, AML/sanctions/KYB, gold-origin due diligence, authenticated users, secure backend storage and audit trail, verified suppliers, consent/privacy policy, commercial terms and compliance screening.
-
-## Development
-
-Open `index.html` in a browser. For API deployment from `api/`, run `npx wrangler deploy` (requires Cloudflare authentication). GitHub Pages deploys the repository root of branch `main`.
+## Legal and technical boundaries
+All supplier profiles are fictional and are marked as such. No prices, actual inventory, authenticated users, supplier contact, payments, brokerage or trades are supported. Do **not** enter real client data into the demo. Before any commercial launch: legal assessment, AML/KYB/sanctions, supply-chain due diligence, verified supplier onboarding, authentication, controlled API writes, secure persistent database, privacy and commercial terms.
